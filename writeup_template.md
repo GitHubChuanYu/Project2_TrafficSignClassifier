@@ -2,7 +2,7 @@
 
 ## Writeup
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+### Chuan Yu's writeup file for Udacity Self-Driving Car Nanodegree Program Project 2 Traffic Sign Classifier
 
 ---
 
