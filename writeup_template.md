@@ -23,10 +23,10 @@ The goals / steps of this project are the following:
 [image2]: ./examples/TrainningDataSignCounts.png "TrainningDataSignCounts"
 [image3]: ./examples/Normalize.png "Normalize"
 [image4]: ./new_images_1/13_Yield.png "Traffic Sign 1"
-[image5]: ./new_images_1/31_Wild animals crossing.png "Traffic Sign 2"
-[image6]: ./new_images_1/37_Go straight or left.png "Traffic Sign 3"
+[image5]: ./new_images_1/31_Wild_animals_crossing.png "Traffic Sign 2"
+[image6]: ./new_images_1/37_Go_straight_or_left.png "Traffic Sign 3"
 [image7]: ./new_images_1/3_Speed limit(60kph).png "Traffic Sign 4"
-[image8]: ./new_images_1/9_No passing.png "Traffic Sign 5"
+[image8]: ./new_images_1/9_No_passing.png "Traffic Sign 5"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
