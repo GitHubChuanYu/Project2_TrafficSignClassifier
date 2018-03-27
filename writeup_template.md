@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 [image4]: ./new_images_1/13_Yield.png "Traffic Sign 1"
 [image5]: ./new_images_1/31_Wild_animals_crossing.png "Traffic Sign 2"
 [image6]: ./new_images_1/37_Go_straight_or_left.png "Traffic Sign 3"
-[image7]: ./new_images_1/3_Speed limit(60kph).png "Traffic Sign 4"
+[image7]: ./new_images_1/3_Speed_limit_60kph.png "Traffic Sign 4"
 [image8]: ./new_images_1/9_No_passing.png "Traffic Sign 5"
 
 ## Rubric Points
