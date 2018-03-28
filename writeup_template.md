@@ -128,41 +128,61 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
-
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-Here are the results of the prediction:
+* I have tried two sets of five new traffic sign images I download from web. 
+
+* The first set is in folder [new_images](https://github.com/GitHubChuanYu/Project2_TrafficSignClassifier/tree/master/new_images). Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Wild animals crossing      		| Wild animals crossing   									| 
+| Pedestrians     			| Go straight or left 										|
+| Go straight or left 					| Go straight or left 											|
+| 120 km/h	      		| 20km/h					 				|
+| Yield      | Yield     							|
 
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This seems not match the high accuracy on the test set of 0.946. The result is shown in [Traffic_Sign_Classifier_1.html](https://github.com/GitHubChuanYu/Project2_TrafficSignClassifier/blob/master/Traffic_Sign_Classifier_1.html)
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+* The second set is in folder [new_images_1](https://github.com/GitHubChuanYu/Project2_TrafficSignClassifier/tree/master/new_images_1). Here are the results of the prediction:
+
+| Image			        |     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Wild animals crossing      		| Wild animals crossing   									| 
+| No passing     			| No passing 										|
+| Go straight or left 					| Go straight or left 											|
+| 60 km/h	      		| 60km/h					 				|
+| Yield      | Yield     							|
+
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This seems match the high accuracy on the test set of 0.946. The result is shown in [Traffic_Sign_Classifier_Final.html](https://github.com/GitHubChuanYu/Project2_TrafficSignClassifier/blob/master/Traffic_Sign_Classifier_Final.html)
+
+* Based on the test results of two sets of new sign images, it seems like some specific sign images like '120km/h' and 'pedestrians' are hard to be predicted correctly using current model.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+* The softmax probabilities for the predictions of two sets of five new sign images are also documented in two html files shown above.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+* For the first set in in folder [new_images](https://github.com/GitHubChuanYu/Project2_TrafficSignClassifier/tree/master/new_images). The softmax probability results are:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1         			| Wild animals crossing   									| 
+| 0     				| Pedestrians 										|
+| 1					| Go straight or left											|
+| 0	      			| 120km/h					 				|
+| 1				    | Yield      							|
 
+* For the second set in in folder [new_images_1](https://github.com/GitHubChuanYu/Project2_TrafficSignClassifier/tree/master/new_images_1). The softmax probability results are:
 
-For the second image ... 
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1         			| Wild animals crossing   									| 
+| 1     				| No passing 										|
+| 1					| Go straight or left											|
+| 1	      			| 60km/h					 				|
+| 1				    | Yield      							|
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+It seems like for 'Pedestirans' and '120km/h' sign images, the model cannot predict it.
 
-
+### Possible improvements
+One possible improvement would be to investigate why current CNN has absolutely high accuracy on predicting specific sign images like second set of five new sign images, however it has very low accuracy (almost 0) to predict some specific sign images like '120km/h' and 'pedestrians'.
