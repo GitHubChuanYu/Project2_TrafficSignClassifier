@@ -27,6 +27,11 @@ The goals / steps of this project are the following:
 [image6]: ./new_images_1/37_Go_straight_or_left.png "Traffic Sign 3"
 [image7]: ./new_images_1/3_Speed_limit_60kph.png "Traffic Sign 4"
 [image8]: ./new_images_1/9_No_passing.png "Traffic Sign 5"
+[image9]: ./new_images/13_Yield.png "Traffic Sign 6"
+[image10]: ./new_images/27_Pedestrians.png "Traffic Sign 7"
+[image11]: ./new_images/31_Wild_animals_crossing.png "Traffic Sign 8"
+[image12]: ./new_images/37_Go_straight_or_left.png "Traffic Sign 9"
+[image13]: ./new_images/8_Speed_limit_120kph.png "Traffic Sign 10"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -123,10 +128,19 @@ I tried dropout on different layers, it seems like it has different effects when
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+I have downed two sets of five German traffic sign images from web:
+
+* First set of five images are:
+
+![alt text][image9] ![alt text][image10] ![alt text][image11] 
+![alt text][image12] ![alt text][image13]
+
+* Second set of five images are:
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
+
+**Note: For curiosity, I have downloaded the "Pedestrians" and "120km/h speed limit" signs with some rotation (the sign inside the image is not parallel with the image surface) in first set. My guess is that this unique feauture of these two sign images will make them a little little bit difficult for my trained CNN model to classify if all the images inside the training dataset do not have this sign angle feature to the image surface.**
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -156,7 +170,7 @@ The model was able to correctly guess 3 of the 5 traffic signs, which gives an a
 
 The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This seems match the high accuracy on the test set of 0.946. The result is shown in [Traffic_Sign_Classifier_Final.html](https://github.com/GitHubChuanYu/Project2_TrafficSignClassifier/blob/master/Traffic_Sign_Classifier_Final.html)
 
-* Based on the test results of two sets of new sign images, it seems like some specific sign images like '120km/h' and 'pedestrians' are hard to be predicted correctly using current model.
+* Based on the test results of two sets of new sign images, it seems like some specific sign images like '120km/h' and 'pedestrians' are hard to be predicted correctly using current model. This matches my initial guess when I purposely chose two images with the sign having an angle with the image surface instead of parallel to the image surfaces like the rest of chosen images. The unique two signs are not classified, whereas the rest normal signs are classified. This makes me think that maybe the original training dataset should be augmented with some features like rotating the sign to make it have angle to the image surface. Then our CNN training model are trained with this augmented dataset, then maybe the unique "120km/h" and "pedestrians" will be classified correctly with the new model trained by augmented dataset.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -185,4 +199,4 @@ The model was able to correctly guess 5 of the 5 traffic signs, which gives an a
 It seems like for 'Pedestirans' and '120km/h' sign images, the model cannot predict it.
 
 ### Possible improvements
-One possible improvement would be to investigate why current CNN has absolutely high accuracy on predicting specific sign images like second set of five new sign images, however it has very low accuracy (almost 0) to predict some specific sign images like '120km/h' and 'pedestrians'.
+One possible improvement would be to augamment the training dataset with more features of the sign inside the image like rotation of the sign to make it have an angle to the image surface so that the CNN model trained with augamented dataset can identify more unique and realistic sign images like what I picked here for "120km/h speed limit" and "pedestrians" successfully.
